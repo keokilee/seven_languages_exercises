@@ -6,6 +6,7 @@
 num_words_recursive([], false) -> 0;
 % 32 corresponds to a space.
 num_words_recursive([32|Tail], false) -> num_words_recursive(Tail, false);
+% Catches anything that is not a space.
 num_words_recursive([_|Tail], false) -> num_words_recursive(Tail, true);
 
 num_words_recursive([], true) -> 1;
